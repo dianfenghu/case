@@ -1,0 +1,145 @@
+{:W('Case/header')}
+			<div class="clearfix" id="main">
+				<!--banner star-->
+				<div class="banenr" id="banner_box">
+			    	<ul>
+			    		<volist name="banner" id="banner_list">
+			        	<li class="dian">
+			        		<a href="/" title="轮播">
+			        			<img class="dis_block" src="__PUBLIC__/Uploads/Banner/{$banner_list.Photo}" alt="轮播">		        			
+			        		</a>
+			        	</li>
+			        	</volist>
+			        </ul>
+			    	<ol>
+			            <script>
+			                $(".dian").each(function () {
+			                    document.write('<li class=""></li>')
+			                });
+			            </script>
+			        </ol>				       
+			    </div>
+				<!--banner end-->
+				
+				<!--about star-->
+				<div class="about clearfix box-s">
+					<div class="about-nav clearfix">
+						<samp></samp>
+						<span class="bt">关于我们</span><br>
+						<span class="fbt">About&nbsp;&nbsp;Us</span>
+					</div>
+					<div class="about-content clearfix">
+						<p>
+							{$introduction|htmlspecialchars_decode}
+						</p>
+					</div>
+					<a href="__MODULE__/Menu/index/Mid/19" class="about-more clearfix" title="更多">
+						MORE+
+					</a>
+				</div>
+				<!--about end-->
+				
+				<!--project star-->
+				<div class="project clearfix" id="about">
+					<div class="content clearfix">
+						<div class="about-nav clearfix">
+							<samp></samp>
+							<span class="bt bt1">产品资讯</span><br>
+							<span class="fbt">Expansion&nbsp;project</span>
+						</div>
+						<div class="scrollBox box-s clearfix">
+							<div class="ohbox">
+								<ul class="piclist">
+								<volist name="product_list" id="product">
+									<li>
+										<div class="left fl">
+											<a href="__MODULE__/Product/detail/Pid/{$product.Pid}" title="{$product.Title}"><img  width="337px" height="250px" src="__PUBLIC__/Uploads/Product/{$product.Photo}" alt="{$product.Title}" /></a>
+										</div>
+									</li>
+								</volist>
+								</ul>
+							</div>
+							<div class="pageBtn">
+								<span class="prev">&lt;</span>
+								<span class="next">&gt;</span>
+								<ul class="list" style="display: none;"><li>0</li><li>1</li></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--project end-->
+				
+				<!--Expanding base star-->
+				<div class="about-nav clearfix">
+					<samp></samp>
+					<span class="bt">新闻资讯</span><br>
+					<span class="fbt">Expanding &nbsp;base</span>
+				</div>
+				<div class="expanding" id="expanding_box">
+			    	<ul>
+					<volist name="newslist" id="news_list">
+			        	<li class="yuan">
+			        		<div class="list clearfix fl">
+			        			<a href="__MODULE__/News/detail/Nid/{$news_list.Nid}" title="{$news_list.Title}">
+				        			<img width="171px" height="160px" src="__PUBLIC__/Uploads/News/{$news_list.Photo}" alt="{$news_list.Title}" />
+				        			<div class="list-nr clearfix ta-c box-s">
+				        				<p class="bt"></p>
+				        				<p class="fbt"></p>
+				        				<p class="nr">
+				        				{$news_list.Title}
+				        				</p>
+				        			</div>
+			        			</a>
+			        		</div>
+							<div class="list clearfix fl">
+			        			<a href="__MODULE__/News/detail/Nid/{$news_list.Nid}" title="{$news_list.Title}">
+				        			<img width="171px" height="160px" src="__PUBLIC__/Uploads/News/{$news_list.Photo}" alt="{$news_list.Title}" />
+				        			<div class="list-nr clearfix ta-c box-s">
+				        				<p class="bt"></p>
+				        				<p class="fbt"></p>
+				        				<p class="nr">
+				        				{$news_list.Title}
+				        				</p>
+				        			</div>
+			        			</a>
+			        		</div>
+			        	</li>
+			        </volist>
+			        </ul>
+			    	<ol>
+			            <script>
+			                $(".yuan").each(function () {
+			                    document.write('<li class=""></li>')
+			                });
+			            </script>
+			        </ol>				       
+			    </div>
+				<!--Expanding base end-->
+				
+				<!--Successful case star-->
+				<div class="case case1 clearfix">
+					<div class="about-nav clearfix">
+						<samp></samp>
+						<span class="bt">成功案例</span><br>
+						<span class="fbt">Successful &nbsp;case</span>
+					</div>
+					<div class="case-list clearfix box-s">
+					<volist name="productlist" id="productlist">
+						<div class="list clearfix fl">
+							<a href="__MODULE__/Product/detail/Pid/{$productlist.Pid}" title="{$productlist.Title}">
+								<samp></samp>
+								<img width="163px" height="108px" src="__PUBLIC__/Uploads/Product/{$productlist.Photo}" alt="{$productlist.Title}" />
+								<span class="opa8"></span>
+								<p class="tit">1{$product_anli_list.Title}</p>
+							</a>
+						</div>
+					</volist>
+					</div>
+					<a href="__MODULE__/Product/productcase" class="about-more about-more1 clearfix" title="更多">
+						MORE+
+					</a>
+				</div>
+				<!--Successful case end-->
+				
+				<!--contact us star-->
+				{:W('Case/footer')}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>纯js图片和视频查看器插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>纯js图片和视频查看器插件 <span>A jQuery plugin designed to provide gallery view for images</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Lightbox-Dialog/201704114449.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="main">
+		    <div class="header">
+		      <div class="logo"><img src="img/bp.svg" alt="BigPicture" title="BigPicture"></div>
+		      <p>Super lightweight &amp; framework independent JavaScript image / video viewer</p>
+		    </div>
+
+		    <div id="image_container" class="container">
+		      <h3>图片</h3>
+		      <p>Click thumbnails to load larger images. Loading spinner &amp; captions are built-in.</p>
+		      <div class="flex">
+		        <img src="img/photo1_thumb.jpg"/>
+		        <img src="img/photo7_thumb.jpg"/>
+		        <img src="img/photo2_thumb.jpg" caption="Example of an optional caption. You can put words here."/>
+		        <img src="img/photo3_thumb.jpg"/>
+		      </div>
+		    </div>
+
+		    <div id="video_container" class="container">
+		      <h3>视频</h3>
+		      <p>支持Youtube, Vimeo和超链接。任何元素触发都可以触发弹出查看器。例如，点击这个超链接弹出一段<span class="text-trigger htmlvid" vidSrc="videos/panda.mp4">熊猫的视频</span>。</p>
+		      <div class="flex">
+		        <div class="vid htmlvid" style="background-image:url(img/vid_towers.jpg)" vidSrc="videos/towers.mp4"></div>
+		        <div class="vid youtube" style="background-image:url(https://i.ytimg.com/vi/tU1b1H2EWU4/mqdefault.jpg)" ytSrc="tU1b1H2EWU4"></div>
+		        <div class="vid youtube" style="background-image:url(https://i.vimeocdn.com/video/540194840_350x200.jpg)" ytSrc="rTi9FKuMNKQ"></div>
+		        <div class="vid youtube" style="background-image:url(https://i.ytimg.com/vi/z_PeaHVcohg/mqdefault.jpg)" ytSrc="z_PeaHVcohg"></div>
+		        <div class="vid vimeo" style="background-image:url(https://i.vimeocdn.com/video/506473859_350x200.jpg)" vimeoSrc="119287310"></div>
+		        <div class="vid vimeo" style="background-image:url(https://i.vimeocdn.com/video/554831823_350x200.jpg)" vimeoSrc="154174852"></div>
+		      </div>
+		    </div>
+
+		    <div id="local_image_container" class="container">
+		      <h3>本地图片</h3>
+		      <p>Normal image elements resized with css</p>
+		      <div class="flex">
+		        <img src="img/background3.jpg"/>
+		        <img src="img/background4.jpg" caption="Another optional caption."/>
+		        <img src="img/background6.jpg"/>
+		      </div>
+		      <p>Elements with background-images. Script extracts the image automatically.</p>
+		      <div id="background_images" class="flex">
+		        <div class="background-image" style="background-image:url(img/background2.jpg)"></div>
+		        <div class="background-image" style="background-image:url(img/background5.jpg)"></div>
+		        <div class="background-image" style="background-image:url(img/background1.jpg)" caption="You can use captions with any kind of element."></div>
+		      </div>
+		    </div>
+
+		    <div class="container" id="broken_container">
+		      <h3>错误处理</h3>
+		      <p>If your remote link is 404, or the display element throws an error, the user will receive an alert.</p>
+		      <div class="flex">
+		        <img id="broken_image" src="img/broken_thumb.jpg"/>
+		        <div id="broken_vid" class="vid htmlvid" style="background-image:url(img/vid_towers.jpg);width:480px;margin:.2em"></div>
+		      </div>
+		      <p>If the vimeo / youtube URL is incorrect, the embed is shown with the error.</p>
+		      <div class="flex">
+		        <div class="vid youtube" style="width:480px;background-image:url(https://i.vimeocdn.com/video/540194840_350x200.jpg)"></div>
+		        <div class="vid vimeo" style="width:480px;background-image:url(https://i.vimeocdn.com/video/506473859_350x200.jpg)"></div>
+		      </div>
+		    </div>
+
+		    <div class="credit">
+		      <p>All images found at <a href="https://unsplash.com/">Unsplash</a>  |  "Towers of Pfeiffer" video by <a href="https://vimeo.com/ghpvisuals">Grant Porter</a> (CC-BY)</p>
+		    </div>
+		  </div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Lightbox-Dialog/201610194123.html">
+			  <img src="related/1.jpg" width="300" alt="超酷jQuery和CSS3图片遮罩层和lightbox动画特效"/>
+			  <h3>超酷jQuery和CSS3图片遮罩层和lightbox动画特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Lightbox-Dialog/201606193618.html">
+			  <img src="related/2.jpg" width="300" alt="jQuery图片放大预览lightbox插件"/>
+			  <h3>jQuery图片放大预览lightbox插件</h3>
+			</a>
+		</div>
+	</div>
+	
+	<script src="dist/BigPicture.js"></script>
+	<script>
+	  (function() {
+
+	    function setClickHandler(id, fn) {
+	      document.getElementById(id).onclick = fn;
+	    }
+
+	    setClickHandler('image_container', function(e) {
+	      e.target.tagName === 'IMG' && BigPicture({
+	        el: e.target,
+	        imgSrc: e.target.src.replace('_thumb', '')
+	      });
+	    });
+
+	    setClickHandler('local_image_container', function(e) {
+	      (e.target.tagName === 'IMG' || e.target.className === 'background-image') &&
+	        BigPicture({
+	          el: e.target
+	        });
+	    });
+
+	    setClickHandler('video_container', function(e) {
+	      var className = e.target.className;
+	      ~className.indexOf('htmlvid') &&
+	        BigPicture({
+	          el: e.target,
+	          vidSrc: e.target.getAttribute('vidSrc')
+	        });
+	      ~className.indexOf('vimeo') &&
+	        BigPicture({
+	          el: e.target,
+	          vimeoSrc: e.target.getAttribute('vimeoSrc')
+	        });
+	      ~className.indexOf('youtube') &&
+	        BigPicture({
+	          el: e.target,
+	          ytSrc: e.target.getAttribute('ytSrc')
+	        });
+	    })
+
+	    setClickHandler('broken_container', function(e) {
+	      e.target.id === 'broken_image' &&
+	        BigPicture({
+	          el: e.target,
+	          imgSrc: '/nopic.jpg'
+	        });
+	      e.target.id === 'broken_vid' &&
+	        BigPicture({
+	          el: e.target,
+	          vidSrc: '/novid.mp4'
+	        });
+	      ~e.target.className.indexOf('vimeo') &&
+	        BigPicture({
+	          el: e.target,
+	          vimeoSrc: 'ajoiejlkr'
+	        })
+	      ~e.target.className.indexOf('youtube') &&
+	        BigPicture({
+	          el: e.target,
+	          ytSrc: 'oijlksdjf'
+	        })
+	    });
+
+	  })();
+	</script>
+</body>
+</html>

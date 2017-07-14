@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>郑州腾翔科技网站后台登录管理系统</title>
+<link href="__PUBLIC__/admin/login/style/css.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/admin/login/js/png.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/admin/login/js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<div class="logo"><a href="www.tengxiangkeji.com"><img src="__PUBLIC__/admin/login/images/logo.png"  onload="fixPNG(this)" width="350" height="103" border="0" /></a></div>
+<form action="__MODULE__/Login/login"  method="post">
+<div class="login" style=" width:483px; margin:0 auto; padding-top:131px;">
+  <div class="fl">	
+      <div class="u_name">
+        <input type="text" name="adminName" id="name" class="text1"/>
+      </div>
+	  <div style=" height:12px; overflow:hidden;">&nbsp;</div>
+	  <div class="u_pass">
+	    <input type="password" name="password" id="pwd"  class="text1"/>
+	  </div>
+	  <div style="height:11px; overflow:hidden;">&nbsp;</div>
+	  <div class="yzm">
+	  	<!-- <img src="__MODULE__/login/verify" alt="" onclick='this.src="__MODULE__/login/verify/rand="+Math.random()'> -->
+	     <div class="y_fl"><input type="text" name="fcode" id="did"  class="text2"/></div>
+		 <div class="y_fr"><a href="#"><img src="__MODULE__/login/verify" alt="验证码" onclick='this.src="__MODULE__/login/verify/rand="+Math.random()' border="0" width='80px'></a></div>
+		 <div style="clear:both;"></div>
+	  </div>
+  </div>
+  <div class="fr"><input type="image" src="__PUBLIC__/admin/login/images/dl.jpg" alt="登录" /></div>
+  <div style="clear: both;"></div>
+</div>
+</form>
+<script type="text/javascript">
+// 	$(function(){
+// 		$("#did").blur(function(){
+// 			var val = $("#did").val();
+// 		     $.ajax({  
+// 		         type:'post',      
+// 		         url:'__MODULE__/login/code',  
+// 		         data:{fcode:val},  
+// 		         cache:false,  
+// 		         dataType:'json',  
+// 		         success:function(data){  
+// 		         	if(data == 0){
+// 		         		alert('验证码输入错误');
+// 		         	}
+// 		         },error:function(){
+// 		         	alert('ajax相应失败');
+// 		         }  
+// 		     });  
+		 
+// 		})
+
+// 	})
+</script>
+</body>
+</html>

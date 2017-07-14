@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>视频</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"> -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="video_container" class="container">
+		      <h3>视频</h3>
+		      <p>支持Youtube, Vimeo和超链接。任何元素触发都可以触发弹出查看器。例如，点击这个超链接弹出一段<span class="text-trigger htmlvid" vidSrc="videos/panda.mp4">熊猫的视频</span>。</p>
+		      <div class="flex">
+		        <div class="vid htmlvid" style="background-image:url(img/vid_towers.jpg)" vidSrc="videos/towers.mp4"></div>
+		        
+		      </div>
+	</div>
+     
+</body>
+<script src="dist/BigPicture.js"></script>
+<<script>
+	  (function() {
+
+	    function setClickHandler(id, fn) {
+	      document.getElementById(id).onclick = fn;
+	    }
+
+	   
+	    setClickHandler('video_container', function(e) {
+	      var className = e.target.className;
+	      ~className.indexOf('htmlvid') &&
+	        BigPicture({
+	          el: e.target,
+	          vidSrc: e.target.getAttribute('vidSrc')
+	        });
+	      ~className.indexOf('vimeo') &&
+	        BigPicture({
+	          el: e.target,
+	          vimeoSrc: e.target.getAttribute('vimeoSrc')
+	        });
+	      ~className.indexOf('youtube') &&
+	        BigPicture({
+	          el: e.target,
+	          ytSrc: e.target.getAttribute('ytSrc')
+	        });
+	    })
+
+	    setClickHandler('broken_container', function(e) {
+	      e.target.id === 'broken_image' &&
+	        BigPicture({
+	          el: e.target,
+	          imgSrc: '/nopic.jpg'
+	        });
+	      e.target.id === 'broken_vid' &&
+	        BigPicture({
+	          el: e.target,
+	          vidSrc: '/novid.mp4'
+	        });
+	      ~e.target.className.indexOf('vimeo') &&
+	        BigPicture({
+	          el: e.target,
+	          vimeoSrc: 'ajoiejlkr'
+	        })
+	      ~e.target.className.indexOf('youtube') &&
+	        BigPicture({
+	          el: e.target,
+	          ytSrc: 'oijlksdjf'
+	        })
+	    });
+
+	  })();
+	</script>
+</html>

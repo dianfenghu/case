@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/admin/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/admin/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/admin/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/admin/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/admin/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/admin/static/h-ui.admin/css/style.css" />
+<title>后台数据管理</title>
+</head>
+<body class="pos-r">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 菜单管理 
+		<span class="c-gray en">&gt;</span> 菜单列表 
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container">
+		<form action="__MODULE__/caidan/insert" method="post" id="myform">
+			<div class="text-c">
+				<select name="pid" style="width:250px;height:36px;">
+					<option value="0">祖级栏目</option>
+					<foreach name="list" item="vd">
+						<option value="{$vd.id}">{$vd.name}</option>
+						<foreach name="row" item="vr">
+							<if condition="$vr['pid'] eq $vd['id']">
+							<option disabled value="{$vr.id}">&nbsp;&nbsp;||--{$vr.name}</option>
+							</if>
+						</foreach>
+					</foreach>
+				</select>
+				<input type="text" name="name" id="Name" placeholder=" 栏目名称" style="width:250px" class="input-text">
+				<input type="text" name="biaoshi"  placeholder=" 栏目标识" style="width:250px" class="input-text">
+				<button  id="button" class="btn btn-success" type="submit">+ 添加栏目</button>
+			</div>
+		</form>
+		<div class="mt-20">
+			<table class="table table-border table-bordered table-bg table-hover table-sort">
+				<thead>
+					<tr class="text-c">
+						<th width="40"><input name="" type="checkbox" value=""></th>
+						<th width="40">ID</th>
+						<th width="60">栏目名称</th>
+						<th width="100">栏目标识</th>
+						<th width="100">显示状态</th>
+						<th width="250">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="list" item="ls">
+						<tr class="text-c va-m">
+							<td><input name="" type="checkbox" value=""></td>
+							<td>{$ls.id}</td>
+							<td>{$ls.name}</td>
+							<td>{$ls.biaoshi}</td>							
+							<td class="td-status">
+								<if condition="$ls.status eq 0">
+									<span class="label label-success radius">显示</span>
+								<elseif condition="$ls.status eq 1"/>
+									<span class="label label-defaunt radius">不显示</span>
+								</if>
+							</td>
+							<td class="td-manage">
+								<if condition="$Menu.Status eq 0">
+									<a style="text-decoration:none" onClick="Menu_stop(this,{$Menu.Mid})" href="javascript:void(0);" title="不显示"><i class="Hui-iconfont">&#xe6de; 不显示</i></a> 
+								<else />
+									<a style="text-decoration:none" onClick="Menu_start(this,{$Menu.Mid})" href="javascript:void(0);" title="显示"><i class="Hui-iconfont">&#xe603; 显示</i></a>
+								</if>
+								
+								<a style="text-decoration:none" data-title="{$Menu.Name}" onclick="confirm('你确定要删除吗?')"  class="ml-5" href="__MODULE__/Menu/editMenu/Mid/{$Menu.Mid}" title="编辑"><i class="Hui-iconfont">&#xe6df; 编辑</i></a> 
+								<a style="text-decoration:none" class="ml-5" onClick="Menu_del(this,{$Menu.Mid})" href="javascript:void(0);" title="删除"><i class="Hui-iconfont">&#xe6e2; 删除</i></a></td>
+						</tr>
+						<!-- <foreach name="row" item="rw">
+						
+						</foreach> -->
+					</foreach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<script type="text/javascript" src="__ROOT__/Public/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/admin/lib/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/admin/lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/admin/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+
+</body>
+</html>
